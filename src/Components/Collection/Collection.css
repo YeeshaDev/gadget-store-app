@@ -1,6 +1,7 @@
 .section {
     padding-top: 30px;
     padding-bottom: 30px;
+    max-width: 100%;
   }
 
   .main-nav {
@@ -32,7 +33,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
+    width: 100%;
     
     
 }
@@ -107,6 +109,7 @@
     color: #FFF;
     text-transform: capitalize;
     width: 50%;
+    letter-spacing: 2px;
   }
   
   .shop .shop-body .cta-btn {
