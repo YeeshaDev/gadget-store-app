@@ -60,6 +60,6 @@ export const store = [
     {
         id:6,
         image:'./assets/smart-watch.png',
-        collection:'smart watch collection',
+        collection:'watch collection',
     }
 ]

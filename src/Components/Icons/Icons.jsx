@@ -6,7 +6,6 @@ import './Icons.css'
 function Icons() {
     return (
         <div className='icons-content'>
-            <Marquee>
             <div className="marquee-icons">
              <div className="image">
          <img src='./assets/shipping-truck.svg' alt='' className='icons'/>
@@ -48,7 +47,7 @@ function Icons() {
             </div>
             
          </div>
-         </Marquee>
+        
         </div>
     )
 }

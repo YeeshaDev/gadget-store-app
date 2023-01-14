@@ -33,7 +33,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
     
     
@@ -83,7 +83,7 @@
   }
 
 .shop-img > img {
-    max-width: 100%;
+  width: 400px;
     height: 100%;
     object-fit: cover;
     -webkit-transition: 0.2s all;
@@ -120,6 +120,7 @@
 @media screen and (max-width:960px) {
     .row {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .shop .shop-body h3 {
@@ -127,7 +128,28 @@
         margin-top: 50px;
       }
     .shop-img > img {
-        width: 100%;
+        width: 550px;
     }
 }
 
+@media screen and (max-width:500px) {
+  .row {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+  }
+
+  .shop .shop-body h3 {
+      font-size: 150%;
+      margin-top: 30px;
+      margin-left: -10px;
+    }
+  .shop-img > img {
+      width: 100%;
+  }
+  .shop .shop-body .cta-btn {
+    color: #FFF;
+    text-transform: uppercase;
+    margin-left: -10px;
+  }
+
+}
