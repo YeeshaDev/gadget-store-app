@@ -8,7 +8,7 @@ function Icons() {
         <div className='icons-content'>
             <div className="marquee-icons">
              <div className="image">
-         <img src='./assets/shipping-truck.svg' alt='' className='icons'/>
+         <img src='./photos/shipping-truck.svg' alt='' className='icons'/>
          </div>
          <div>
             <h3>Free Delivery</h3>
@@ -19,7 +19,7 @@ function Icons() {
          
          <div className="marquee-icons">
 <div className="image">
-         <img src='./assets/chat-support.svg' alt='' className='icons'/>
+         <img src='./photos/chat-support.svg' alt='' className='icons'/>
          </div>
          <div>
             <h3>Online Support 24/7</h3>
@@ -29,7 +29,7 @@ function Icons() {
          </div>
          <div className="marquee-icons">
 <div className="image">
-         <img src='./assets/returns.svg' alt='' className='icons return'/>
+         <img src='./photos/returns.svg' alt='' className='icons return'/>
          </div>
          <div>
             <h3>Money Return</h3>
@@ -39,7 +39,7 @@ function Icons() {
          </div>
          <div className="marquee-icons">
             <div className="image">
-         <img src='./assets/discount.svg' alt='' className='icons'/>
+         <img src='./photos/discount.svg' alt='' className='icons'/>
          </div>
          <div>
             <h3>Member Discount</h3>

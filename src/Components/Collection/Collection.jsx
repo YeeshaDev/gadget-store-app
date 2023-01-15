@@ -9,7 +9,7 @@ function Collection() {
     <section className=''>
         <nav>
         <ul className="main-nav d-none d-lg-flex align-items-center justify-content-center">
-						<li class="active"><a href="#" className='list d-inline-flex m-2 text-decoration-none'>Home</a></li>
+						<li className="active"><a href="#" className='list d-inline-flex m-2 text-decoration-none'>Home</a></li>
 						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>Today's Deals</a></li>
 						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>New Products</a></li>
 						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>Trending Products</a></li>
@@ -27,7 +27,7 @@ function Collection() {
              <div className="flex"  key={id}>
 						<div className="shop">
 							<div className="shop-img">
-								<img src={image} alt=""/>
+								<img src={`./photos/${image}`} alt=""/>
 							</div>
 							<div className="shop-body">
 								<h3>{collection}</h3>

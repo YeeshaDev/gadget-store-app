@@ -34,32 +34,32 @@ export const items= [
 export const store = [
     {
         id:1,
-        image:'../../assets/product01.png',
+        image:'product01.png',
         collection:'laptop collection',
         
     },
     {
         id:2,
-        image:'./assets/shop03.png',
+        image:'shop03.png',
         collection:'cameras collection',
     }, 
     {
         id:3,
-        image:'./assets/shop02.png',
+        image:'shop02.png',
         collection:'headphones collection',
     },
      {
         id:4,
-        image:'./assets/product07.png',
+        image:'product07.png',
         collection:'phone collection',
     },{
         id:5,
-        image:'./assets/wireless-controller.png',
+        image:'wireless-controller.png',
         collection:'Games collection',
     },
     {
         id:6,
-        image:'./assets/smart-watch.png',
+        image:'smart-watch.png',
         collection:'watch collection',
     }
 ]

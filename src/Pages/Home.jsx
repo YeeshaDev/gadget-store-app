@@ -3,6 +3,8 @@ import Marquee from 'react-fast-marquee';
 import Header from '../Components/Header/Header';
 import Collection from '../Components/Collection/Collection';
 import Icons from '../Components/Icons/Icons';
+import Deal from '../Components/TodayDeal/Deal';
+import New from '../Components/New/new';
 
 function Home() {
   return (
@@ -15,6 +17,8 @@ function Home() {
          >
         <Icons/>
         </Marquee>
+        <Deal/>
+        <New/>
     </div>
   )
 }

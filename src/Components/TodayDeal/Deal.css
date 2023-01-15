@@ -1,0 +1,12 @@
+.deal-image {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.xbox {
+    background-color: rgb(197, 198, 200);
+    padding: 1rem 0;
+    width: 80%;
+    border-radius: 1rem;
+}
