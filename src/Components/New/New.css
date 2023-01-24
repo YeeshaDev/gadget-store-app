@@ -1,3 +1,137 @@
+/*.new-items {
+    display:block;
+}*/
 .new-heading {
     display: flex;
+    justify-content:space-between;
+    margin-top:2.5rem;
+    padding:1rem;
+}
+
+.new-heading ul li {
+    margin:0.5rem;
+    color: #232324;
+    text-transform:capitalize;
+    position:relative;
+    cursor:pointer;
+    
+}
+
+.new-heading ul li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #D10024;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  
+}
+
+.new-heading ul li:hover:after{
+    width: 90%;
+    
+  }
+
+.new-heading h1 {
+    font-size:1.5rem;
+    font-weight:900;
+
+}
+
+.gadget-img img {
+    display: block;
+    width: 70%;
+    margin: auto;
+}
+
+.gadgets {
+ max-width: 1300px;
+  overflow-x: hidden;
+  margin: 0 auto;
+    
+}
+
+/* This is a classname from slick to add margin to the slides*/
+.slick-list {
+    margin: 0 -10px;
+}
+
+/* This is a classname from slick to add margin to the slides*/
+.slick-slide > div {
+    padding: 0 5px;
+    /*overflow: hidden;*/
+}
+
+.gadget-content {
+   /* height: 500px;*/
+    display: block;
+    max-width: 24rem;
+    position: relative;
+    border:1px solid #E4E7ED;
+    padding: 0 9px; 
+   text-align: center;
+   border-radius: 5px;
+  
+}
+
+.gadget-content:hover {
+    border: 1px solid #D10024;
+}
+
+.heart-icon {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
+    color: #D10024;
+}
+.gadget-content h3,.gadget-content h2{
+    font-size: 1.2rem;
+}
+.gadget-name p {
+    text-transform: capitalize;
+}
+.gadget-content:after{
+    content: '';
+    width: 100%;
+    height: 50px;
+    background: #D10024;
+    top: 100%;
+    left: 50%;
+}
+ /*.add-cart h3{
+    opacity: 0;
+   text-align: center;
+   background-color: #D10024;
+   color: #fff;
+}
+ .add-cart h3:hover {
+    visibility: visible;
+    display: block;
+    opacity: 1;
+}*/
+@media screen and (max-width:900px){
+    .new-heading{
+     display:block;
+     padding:1rem;
+     margin-top:1.5rem;
+    }
+
+    /*.gadgets {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        place-content: center;
+        padding:1.5rem;
+        
+    }*/
+    .gadget-img img {
+        width: 100%;
+    }
+    .slick-slide > div {
+        padding: 0 10px;
+        /*overflow: hidden;*/
+    }
 }

@@ -17,7 +17,7 @@ function Home() {
          >
         <Icons/>
         </Marquee>
-        <Deal/>
+        {/*<Deal/>*/}
         <New/>
     </div>
   )
