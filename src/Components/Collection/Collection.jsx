@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowCircleRight } from 'react-icons/fa';
-import { store } from '../../data';
+import { Link } from 'react-router-dom';
+import items from '../../data';
 import './Collection.css'
 //import Image from '../../assets/product01.png'
 
@@ -20,21 +21,23 @@ function Collection() {
         </nav>
 <div className='container'>
 <div className='row'>
-    {store.map((items) => {
-        const {id,image,collection} = items;
+    {items.map((items) => {
+        const {id,img,collection,category} = items;
         return (
             
              <div className="flex"  key={id}>
+				<Link to={`/shop/${collection}`}>
 						<div className="shop">
 							<div className="shop-img">
-								<img src={`./photos/${image}`} alt=""/>
+								<img src={`./photos/${img}`} alt=""/>
 							</div>
 							<div className="shop-body">
-								<h3>{collection}</h3>
-								<a href="#" className="cta-btn">Shop now <span className="arrow">
-                                    <FaArrowCircleRight/></span></a>
+								<h3>{collection} collection</h3>
+								<button href="#" className="cta-btn">Shop now <span className="arrow">
+                                    <FaArrowCircleRight/></span></button>
 							</div>
 						</div>
+						</Link>
 					</div>
             
         )

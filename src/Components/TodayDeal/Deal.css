@@ -1,12 +1,72 @@
-.deal-image {
-    width: 20rem;
-    height: 20rem;
-    object-fit: cover;
+.top-selling-content {
+    text-align: center;
+    padding: 1rem;
+    
+}
+.top-selling{
+    border: 1px solid #E4E7ED;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-in-out;
+    
+    
 }
 
-.xbox {
-    background-color: rgb(197, 198, 200);
-    padding: 1rem 0;
-    width: 80%;
-    border-radius: 1rem;
+.top-selling:hover {
+    transform: scale(1.05);
 }
+
+.top-selling-content .slick-list {
+    margin: 0 -5px;
+    overflow: hidden;
+}
+
+/* This is a classname from slick to add margin to the slides*/
+ .top-selling-content .slick-slide > div {
+    padding: 0 7px;
+    /*overflow: hidden;*/
+}
+.deal-img {
+    background-color: #E4E7ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+
+.deal-img img{
+    
+    width: 10rem;
+    height:10rem;
+    object-fit: cover;
+}
+.top-selling-body p{
+text-transform: uppercase;
+}
+.top-selling-body h3{
+  font-size: 1.2rem;
+    }
+    .top-selling-body h2 {
+        color: #D10024;
+    }
+/*.top-selling-content  {
+display:grid;
+grid-template-columns: repeat(2,1fr);
+}    
+
+.top-selling-content .slick-list {
+    display: block!important;
+    }   */ 
+
+   /* .top-selling-content .slick-slide{
+        display: block;
+        margin: 1rem;
+        
+    }
+
+    .top-selling-content .slick-list{
+        display: block;
+        margin: 1rem;
+        
+    }*/

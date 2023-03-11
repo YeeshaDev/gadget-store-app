@@ -5,11 +5,16 @@ import Collection from '../Components/Collection/Collection';
 import Icons from '../Components/Icons/Icons';
 import Deal from '../Components/TodayDeal/Deal';
 import New from '../Components/New/new';
+import HotDeal from '../Components/HotDeal/HotDeal';
+import Newsletter from '../Components/NewsLetter/Newsletter';
+import Footer from '../Components/Footer/Footer';
+import ProductList from '../Components/UI/ProductList';
+import ProductCard from '../Components/UI/ProductCard';
 
-function Home() {
+function Home({handleSearch,query,item,sliderRef}) {
   return (
     <div>
-        <Header/>
+        <Header query={query} handleSearch={handleSearch} item={item}/>
         <Collection/>
         <Marquee 
         pauseOnHover={true}
@@ -17,8 +22,14 @@ function Home() {
          >
         <Icons/>
         </Marquee>
-        {/*<Deal/>*/}
-        <New/>
+        {/*<New item={item}/>*/}
+        <New sliderRef={sliderRef}/>
+        <HotDeal/>
+        {/*<New item={item}/>*/}
+        <New sliderRef={sliderRef}/>
+        <Deal/>
+        <Newsletter/>
+        <Footer/>
     </div>
   )
 }

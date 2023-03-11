@@ -113,10 +113,15 @@
   }
   
   .shop .shop-body .cta-btn {
+    border: none;
     color: #FFF;
+    background-color: transparent;
+    font-weight: 500;
     text-transform: uppercase;
   }
-
+.shop .shop-body .cta-btn:hover {
+  text-decoration: underline;
+}
 @media screen and (max-width:960px) {
     .row {
         grid-template-columns: 1fr;
@@ -127,8 +132,17 @@
         font-size: 200%;
         margin-top: 50px;
       }
-    .shop-img > img {
+      .shop .shop-img {
+        position: relative;
+        background-color: #E4E7ED;
+        z-index: -1;
         width: 550px;
+        height: 400px;
+        
+      }
+    
+    .shop-img > img {
+        width: 100%;
     }
 }
 
@@ -142,6 +156,14 @@
       font-size: 150%;
       margin-top: 30px;
       margin-left: -10px;
+    }
+    .shop .shop-img {
+      position: relative;
+      background-color: #E4E7ED;
+      z-index: -1;
+      width: 100%;
+      height: 300px;
+      
     }
   .shop-img > img {
       width: 100%;

@@ -1,0 +1,68 @@
+.hot-deal-row {
+  display: block;  
+  margin: auto;
+  position: relative;
+}
+.hot-deal-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hot-deal-img img{
+width: 115%;
+}
+
+
+.hot-deal {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.hot-deal-countdown li h3{
+   background-color: #D10024;
+   color: #fff;
+   border-radius: 50%;
+   width: 70px;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+.text-uppercase{
+    white-space: nowrap;
+    margin: 1rem 0;
+    font-weight: 900;
+}
+
+.hotdeal-btn {
+    display: block;
+    text-decoration: none;
+    background-color: #D10024;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.hotdeal-btn:hover {
+    background-color: #D10024;
+    color: #fff;
+    transform: scale(0.95);
+}
+
+@media screen and (max-width:960px) {
+    .hot-deal-img img{
+        width: 120%;
+        height: 300px;
+        object-fit: cover;
+        }
+}

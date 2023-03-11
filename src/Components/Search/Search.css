@@ -1,0 +1,41 @@
+.search-content {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    gap: 1rem;
+    padding:0 0.7rem ;
+}
+.search-items {
+border: 1px solid  #E4E7ED;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding-bottom: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.search-items:hover {
+    transform: scale(1.03);
+}
+.search-content .store-img {
+    width: 100%;
+    background-color:  #E4E7ED;
+    border-radius: 0.5rem 0.5rem 0 0;
+    
+
+}
+.search-content .store-img img {
+    width: 200px;
+}
+
+@media screen and (max-width:960px){
+    .search-content {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    } 
+}
+
+@media screen and (max-width:600px){
+    .search-content {
+        display: grid;
+        grid-template-columns:1fr;
+    } 
+}

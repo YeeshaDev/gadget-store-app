@@ -103,6 +103,10 @@ margin: 1rem;
   border-radius: 0px 40px 40px 0px;
 }
 
+.menu{
+  display: none;
+}
+
 @media screen and (max-width:968px) {
   .top-header {
     flex-direction: column;
@@ -119,6 +123,7 @@ margin: 1rem;
     justify-content: end;
     margin-left: 15rem;
     margin-top: 1rem;
+    cursor: pointer;
   }
   .header-search form .input {
     width: calc(100% - 270px);
@@ -136,7 +141,71 @@ margin: 1rem;
     width: 80px;
     
   }
+
+ .menu{
+  display: block;
+ } 
   
+}
+.menu ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.menu.active ul{
+  flex-direction: column;
+  display: block;
+  position: fixed;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 99;
+  transition: all 0.3s;
+  
+}
+.menu-btn.active {
+  position: fixed;
+  top: 1rem;
+  right: 0rem;
+  z-index: 999;
+  
+}
+.menu.active ul li a {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+  color: #15161D;
+  
+}
+.menu.active ul li.active-btn a {
+  margin-top: 7rem;
+  
+}
+.menu-btn{
+  display: block;
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 1rem;
+  pointer-events: all;
+  cursor: pointer;
+  background-color: #15161D;
+  border: none;
+  
+}
+
+.menu-btn .close {
+  position: fixed;
+  right: 2rem;
+ /* width: 30px;
+  height: 60px;*/
+  background-color: #FFF;
+  color: #15161D;
 }
 
 @media screen and (max-width:400px) {
