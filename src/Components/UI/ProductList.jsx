@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import items from '../../data';
-import { Link } from 'react-router-dom';
-import New from '../New/new';
-import { FaEye, FaExchangeAlt, FaShoppingCart, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+//import { Link } from 'react-router-dom';
+//import New from '../New/new';
+import {  FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import ProductCard from './ProductCard';
 import "slick-carousel/slick/slick-theme.css";
-import RelatedProduct from './RelatedProducts/RelatedProduct';
+//import RelatedProduct from './RelatedProducts/RelatedProduct';
 
 
 function ProductList({ category }) {
@@ -47,7 +47,7 @@ function ProductList({ category }) {
     ]
   };
   return (
-    <div id='new'>
+    <div id='#new'>
       <Slider ref={setSliderRef} {...settings} >
         {items.map((item, index) => {
 
