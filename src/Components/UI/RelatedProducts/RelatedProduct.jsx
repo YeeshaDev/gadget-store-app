@@ -1,10 +1,10 @@
 import React,{useEffect,useRef,useState} from 'react';
-import items from '../../../data';
+//import items from '../../../data';
 import { toast } from 'react-toastify';
 import { cartActions } from '../../../redux/cartSlice';
 import { useDispatch } from 'react-redux';
-import { IoHeartOutline, IoHeart } from 'react-icons/io5';
-import { FaEye, FaExchangeAlt, FaShoppingCart, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+//import { IoHeartOutline, IoHeart } from 'react-icons/io5';
+//import { FaEye, FaExchangeAlt, FaShoppingCart, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { Link,useParams } from 'react-router-dom';
 import './style.css'
 
