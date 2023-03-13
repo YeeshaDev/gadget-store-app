@@ -66,9 +66,9 @@ const dispatch = useDispatch();
     
   }*/
   return (
-    <>
-    <div className='new-items'>
-   <div className='new-heading  align-items-center'>
+    
+    <div className='new-items' id='new'>
+   <div className='new-heading  align-items-center' id='new'>
   <h1 >NEW PRODUCTS</h1>
   <ul className='d-flex'>
     <li>Laptops</li>
@@ -129,7 +129,7 @@ const dispatch = useDispatch();
     <ProductList  />
     
 </div>
-</>
+
   )
 }
 

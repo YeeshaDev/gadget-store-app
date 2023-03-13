@@ -1,11 +1,14 @@
 import React,{useState,useEffect} from 'react'
 import { useNavigate} from 'react-router-dom';
 import Slider from "react-slick";
-//import {createUserWithEmailAndPassword} from 'firebase/auth'
-import { auth,onRegister } from '../../firebase';
+import {collection,addDoc} from 'firebase/firestore/lite'
+import {updateProfile,createUserWithEmailAndPassword} from 'firebase/auth'
+import {ref, uploadBytesResumable,getDownloadURL} from 'firebase/storage'
+import { auth,storage,db } from '../../Utils/firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { toast } from 'react-toastify';
 import './Login.css';
 
 const images =[
@@ -36,14 +39,46 @@ function Signup() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [file, setFile] = useState('');
+    const [file, setFile] = useState(null);
     const [user, loading, error] = useAuthState(auth);
   
     
     const onSubmit = async (e) => {
         e.preventDefault()
-        if (!name) alert("Please enter name");
-    onRegister(name, email, password,confirmPassword);
+        try {
+            if (!name) alert("Please enter name");
+           const userCredential = await createUserWithEmailAndPassword(auth, email, password,confirmPassword)
+           const user = userCredential.user;
+        console.log(user);
+        //navigate("/login")
+            const storageRef = ref(storage,`images/${Date.now() + name}`)
+            const uploadTask = uploadBytesResumable(storageRef,file);
+
+            uploadTask.on((error) =>{
+           toast.error(error.message)
+            },() => {
+                getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL)=> {
+                 await updateProfile(user,{
+                    displayName:name,
+                    photoURL:downloadURL
+                 }); 
+
+                 //This stores the user data on the firestore database
+                  await addDoc(collection(db,'users',user.uid),{
+                    uid:user.uid,
+                    displayName:name,
+                    email,
+                    photoURL:downloadURL,
+                  }) 
+                });
+            })
+            toast.success('Account created successfully')
+            navigate('/login')
+        }
+        catch (error){
+           console.log(error)
+        }
+        
         }
 
 
@@ -90,7 +125,7 @@ if (user) navigate('/home',{replace:true});
     <h1 className='text-center'>Hi, Welcome! </h1>
     <form className='login__form' onSubmit={onSubmit}>
         <div className='main__input'>
-        <input type='email'
+        <input type='text'
         value={name} 
         placeholder='Enter your name'
         onChange={(e) => setName(e.target.value)}
@@ -113,7 +148,6 @@ if (user) navigate('/home',{replace:true});
         </div>
         <div className='img__file'>
         <input type='file' 
-        value={file}
         onChange={(e) => setFile(e.target.files[0])}
         />
         </div>

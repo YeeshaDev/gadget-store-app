@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { signInWithEmailAndPassword } from 'firebase/auth';
 //import { signInWithGoogle } from '../../firebase';
-import {useAuthState} from 'react-firebase-hooks/auth'
-import { auth,signIn,onLogin } from '../../firebase';
+//import {useAuthState} from 'react-firebase-hooks/auth'
+import { auth,signIn, } from '../../Utils/firebase';
 import './Login.css';
 
 function Login() {
@@ -35,17 +35,33 @@ function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [user, loading, error] = useAuthState(auth);
+    //const [user, loading, error] = useAuthState(auth);
 
     
-
-      useEffect(() => {
+    const onLogin =async (e) => {
+        e.preventDefault();
+      
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            navigate("/")
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage)
+        });
+       
+      }
+      /*useEffect(() => {
         if (loading) {
           // maybe trigger a loading screen
           return;
         }
         if (user) navigate("/home");
-      }, [user, loading]);
+      }, [user, loading]);*/
 
     const settings = {
         dots: false,

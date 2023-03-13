@@ -11,10 +11,10 @@ function Collection() {
         <nav>
         <ul className="main-nav d-none d-lg-flex align-items-center justify-content-center">
 						<li className="active"><a href="#" className='list d-inline-flex m-2 text-decoration-none'>Home</a></li>
-						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>Today's Deals</a></li>
-						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>New Products</a></li>
-						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>Trending Products</a></li>
-						<li><a href="#"  className='list d-inline-flex m-2 text-decoration-none'>Top Selling</a></li>
+						<li><a href="#today"  className='list d-inline-flex m-2 text-decoration-none'>Today's Deals</a></li>
+						<li><a href="#new"  className='list d-inline-flex m-2 text-decoration-none'>New Products</a></li>
+						<li><a href="#trending"  className='list d-inline-flex m-2 text-decoration-none'>Trending Products</a></li>
+						<li><a href="#top"  className='list d-inline-flex m-2 text-decoration-none'>Top Selling</a></li>
 						
 						
 					</ul>

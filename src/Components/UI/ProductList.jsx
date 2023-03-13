@@ -47,7 +47,7 @@ function ProductList({ category }) {
     ]
   };
   return (
-    <>
+    <div id='new'>
       <Slider ref={setSliderRef} {...settings} >
         {items.map((item, index) => {
 
@@ -72,7 +72,7 @@ function ProductList({ category }) {
 
 
 
-    </>
+    </div>
   )
 }
 

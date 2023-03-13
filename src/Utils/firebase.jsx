@@ -1,7 +1,9 @@
 import { initializeApp } from "firebase/app";
 //import firebase from 'firebase'
 
-import {getAuth, GoogleAuthProvider,signInWithEmailAndPassword,signInWithPopup,createUserWithEmailAndPassword} from 'firebase/auth'
+import {getAuth, GoogleAuthProvider,signInWithEmailAndPassword,signInWithPopup,signOut} from 'firebase/auth'
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 //import { getFirestore, collection, addDoc, where, query, getDocs} from "firebase/firestore"
 import "firebase/compat/auth";
 import {getFirestore} from 'firebase/firestore/lite'
@@ -34,6 +36,7 @@ const firebaseConfig = {
  const  db = getFirestore(app);
  const storage = getStorage(app);
  const provider = new GoogleAuthProvider();
+ //const navigate = useNavigate();
 
 const onLogin =async (e) => {
   e.preventDefault();
@@ -42,7 +45,7 @@ const onLogin =async (e) => {
   .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      //navigate("/")
+      navigate("/")
       console.log(user);
   })
   .catch((error) => {
@@ -83,27 +86,10 @@ const credential = GoogleAuthProvider.credentialFromError(error);
 });
 };
 
-const onRegister = async() => {
-  await createUserWithEmailAndPassword(auth, email, password,confirmPassword)
-    .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        //navigate("/login")
-        // ...
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        // ..
-    });
-
-  }
-  
 
 
-export {auth,signIn,onLogin,onRegister}
+
+export {auth,signIn,onLogin,db,storage}
 ////const analytics = getAnalytics(app);
 
 export default app;

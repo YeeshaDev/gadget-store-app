@@ -13,6 +13,7 @@ import Footer from './Components/Footer/Footer';
 import Checkout from './Pages/Checkout/Checkout';
 import Login from './Pages/Auth/Login';
 import Signup from './Pages/Auth/Signup';
+import ProtectedRoutes from './Utils/ProtectedRoutes';
 
 function App({item}) {
   const [search,setSearch] = useState('');
@@ -25,11 +26,13 @@ function App({item}) {
   console.log(item)
   return (
     <Routes>
- <Route path='/' element={<Login/>}>
+ <Route path='/login' element={<Login/>}>
    </Route> 
    <Route path='/signup' element={<Signup/>}>
    </Route> 
-  <Route path='/home' element={<Home/>}>
+  <Route path='/' element={<ProtectedRoutes>
+  <Home/></ProtectedRoutes>
+  }>
    </Route>
    <Route path='/search/:query' element={<><Header/><SearchPage/></>}>
    </Route>

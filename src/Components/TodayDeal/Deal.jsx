@@ -42,7 +42,7 @@ function Deal() {
       ]
   }
   return (
-    <div className='deal-content px-3'>
+    <div className='deal-content px-3' id='today'>
      <h1 style={{fontSize:'1.5rem'}}>Top Selling</h1>
      <div className='top-selling-content '>
      
