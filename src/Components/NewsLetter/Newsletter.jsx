@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaEnvelope,FaFacebook,FaTwitter,FaPinterest,FaInstagram} from 'react-icons/fa'
-import './NewsLetter.css';
+import './Newsletter.css';
 
 function Newsletter() {
   return (
