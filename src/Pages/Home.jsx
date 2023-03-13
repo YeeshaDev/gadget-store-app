@@ -4,7 +4,7 @@ import Header from '../Components/Header/Header';
 import Collection from '../Components/Collection/Collection';
 import Icons from '../Components/Icons/Icons';
 import Deal from '../Components/TodayDeal/Deal';
-import New from '../Components/New/new';
+import New from '../Components/New/New';
 import HotDeal from '../Components/HotDeal/HotDeal';
 import Newsletter from '../Components/NewsLetter/Newsletter';
 import Footer from '../Components/Footer/Footer';
