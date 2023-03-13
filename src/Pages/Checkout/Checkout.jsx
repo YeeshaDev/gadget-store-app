@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './Checkout.css'
 
 
 function Checkout() {
+  const navigate = useNavigate();
   const {totalQuantity,totalAmount} = useSelector((state) => state.cart)
 
   return (
@@ -40,7 +42,7 @@ function Checkout() {
          <h4>Free Shipping</h4>
          <hr/>
          <h4  className='total'>Total cost:<span>${totalQuantity}</span></h4>
-         <button className="place__order">
+         <button className="place__order" onClick={() => navigate('/login')}>
           Place an order
          </button>
          </div>

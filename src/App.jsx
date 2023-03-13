@@ -11,6 +11,8 @@ import Header from './Components/Header/Header';
 import FavItem from './Components/ViewItems/FavItem';
 import Footer from './Components/Footer/Footer';
 import Checkout from './Pages/Checkout/Checkout';
+import Login from './Pages/Auth/Login';
+import Signup from './Pages/Auth/Signup';
 
 function App({item}) {
   const [search,setSearch] = useState('');
@@ -23,8 +25,11 @@ function App({item}) {
   console.log(item)
   return (
     <Routes>
- 
-  <Route path='/' element={<Home/>}>
+ <Route path='/' element={<Login/>}>
+   </Route> 
+   <Route path='/signup' element={<Signup/>}>
+   </Route> 
+  <Route path='/home' element={<Home/>}>
    </Route>
    <Route path='/search/:query' element={<><Header/><SearchPage/></>}>
    </Route>
@@ -37,7 +42,8 @@ function App({item}) {
    <Route path='/product/:productName' element={<><Header/> <ProductDetails item={item}/> <Footer/> </>}>
    </Route> 
    <Route path='/shop/:category' element={<><Header/><Shop/></>}>
-   </Route> 
+   </Route>
+   
   
     </Routes>
     

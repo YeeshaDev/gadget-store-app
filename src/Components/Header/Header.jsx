@@ -98,6 +98,9 @@ return item;
 			<span className='icon' onClick={navigateToCart}><FaShoppingCart/></span>
 			<p className='qty position-absolute'>{totalQuantity }</p>
 			</div>
+			<div className='position-relative avatar__container'>
+			<img src='./photos/avatar1.png' alt='avatar'/>
+			</div>
 			<div className={menu ? 'menu active' : 'menu'}>
 			<div className='d-lg-none'>
 				<ul>
