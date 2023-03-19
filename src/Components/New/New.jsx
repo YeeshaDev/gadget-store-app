@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {toast} from 'react-toastify'
 import {useDispatch} from 'react-redux';
+import { product } from '../../data';
 
 
 function New({item,sliderRef}) {
@@ -127,7 +128,15 @@ const dispatch = useDispatch();
   </Slider>*/}
     
     <ProductList  />
-    
+
+  {/* {product.map((item) => {
+    return (
+      <div key={item.id}>
+        <img src={item.itemInfo.itemImg[0]} alt=''/>
+
+      </div>
+    )
+   })}*/} 
 </div>
 
   )

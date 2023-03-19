@@ -22,10 +22,12 @@ function Shop() {
                 <figure className='store-img'>
                     <img src={`../photos/${item.img}`} alt='image'/>
                 </figure>
+                <div className='px-3'>
                 <p className='text-uppercase'>{item.collection}</p>
                 <h1>{item.name}</h1>
         
                 <h1>{item.price}</h1>
+                </div>
                 </Link>
             </div>
             )

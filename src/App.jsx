@@ -14,16 +14,14 @@ import Checkout from './Pages/Checkout/Checkout';
 import Login from './Pages/Auth/Login';
 import Signup from './Pages/Auth/Signup';
 import ProtectedRoutes from './Utils/ProtectedRoutes';
+import { useEffect } from 'react';
+import data from './Components/data/product.json'
+import { product } from './data';
 
 function App({item}) {
-  const [search,setSearch] = useState('');
-  //const [tab,setTab] = useState('')
+  //const [data,setData] = useState([]);
+  
 
-  const handleSearch =(e) => {
-    setSearch(e.target.value)
-  }
-
-  console.log(item)
   return (
     <Routes>
  <Route path='/login' element={<Login/>}>

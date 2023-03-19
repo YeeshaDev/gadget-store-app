@@ -52,6 +52,8 @@ function RelatedProduct({ item, category }) {
     ref.current.scrollIntoView()
   },[])*/
 
+  
+
   return (
     <div>
     <Link to={`/product/${item.name}`}>

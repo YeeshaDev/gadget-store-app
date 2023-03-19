@@ -46,6 +46,8 @@ function ProductList({ category }) {
 
     ]
   };
+
+ 
   return (
     <div id='#new'>
       <Slider ref={setSliderRef} {...settings} >

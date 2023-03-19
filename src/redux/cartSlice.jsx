@@ -1,25 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {toast} from 'react-toastify'
 
-const fecthLocalStorage = () => {
-  let cart = localStorage.getItem('cart');
-  if(cart){
-    return JSON.parse(localStorage.getItem('cart'))
-  }else {
-    return [];
-  }
+const cartItem =
+        localStorage.getItem("cartList") !== null
+            ? JSON.parse(localStorage.getItem("cartList"))
+            : [];
+    const totalAmount =
+        localStorage.getItem("cartTotal") !== null
+            ? JSON.parse(localStorage.getItem("cartTotal"))
+            : 0;
+    const totalQuantity =
+        localStorage.getItem("cartQuantity") !== null
+            ? JSON.parse(localStorage.getItem("cartQuantity"))
+            : 0;
+    
+   // adding this function to prevent repear code 
+    const setCartListFunc = (cartItem, totalAmount, totalQuantity) => {
+        localStorage.setItem("cartList", JSON.stringify(cartItem));
+        localStorage.setItem("cartTotal", JSON.stringify(totalAmount));
+        localStorage.setItem("cartQuantity", JSON.stringify(totalQuantity));
+    };
 
-}
-
-const StoreInLocalStorage= (data)  => {
-  localStorage.setItem('cart',JSON.stringify(data))
-}
 
 const initialState = {
-cartItem:[],
+cartItem:cartItem,
 favItem:[],
-totalAmount:0,
-totalQuantity:0,
+totalAmount:totalAmount,
+totalQuantity:totalQuantity,
 wishListAmount:0,
 wishListQuantity:0,
 }
@@ -53,6 +60,17 @@ const cartSlice = createSlice({
             }
             state.totalAmount = state.cartItem.reduce((total,item) => total + (Number(item.price)  * Number(item.quantity)),0)
             //StoreInLocalStorage(state.newItem)
+            /*setCartListFunc(
+          state.carts.map(item => item),
+          state.totalAmount,
+          state.totalQuantity
+      );*/
+      setCartListFunc(
+        state.cartItem.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity
+    );
+      
             console.log(newItem)
     },
     //add item to wishlist

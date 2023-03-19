@@ -60,7 +60,8 @@ const ref = useRef()
 
   useEffect(() => {
     ref.current.scrollIntoView()
-  },[])
+  },[id])
+  
   
   return (
     <div ref={ref}>
@@ -139,7 +140,9 @@ const ref = useRef()
       </div>
       <div className='mt-5 px-5'>
         <h2 className="related-title mb-4">You might also like</h2>
+       
         <RecommendedList  item={relatedProducts} />
+       
 
       </div>
     </div>
