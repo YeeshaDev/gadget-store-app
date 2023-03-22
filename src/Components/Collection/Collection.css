@@ -136,8 +136,8 @@
         position: relative;
         background-color: #E4E7ED;
         z-index: -1;
-        width: 550px;
-        height: 400px;
+        width: 100%;
+        height: 100%;
         
       }
     

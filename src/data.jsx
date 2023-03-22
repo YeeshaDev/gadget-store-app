@@ -2176,7 +2176,7 @@ export const product = [
 				},
 
 				{
-					"id": "57191",
+					"id": "57190",
 					"itemInfo": {
 						"name": "Samsung A10",
 						"itemImg": ["assets/images/pro-img/51LVTBV6tjL._AC_SX679_.webp"],
@@ -6310,7 +6310,7 @@ export const product = [
             }
           },
           {
-            "id": "4881893",
+            "id": "4881890",
             "itemInfo": {
               "name": "LG",
               "itemImg": [

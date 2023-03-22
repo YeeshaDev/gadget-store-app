@@ -6,7 +6,7 @@ import './Shop.css'
 function Shop() {
     const {category} = useParams();
     const productView = 
-    items.filter((product) => product.collection == category);
+    items.filter((product) => product.itemInfo.category == category);
     //const{name,price,img} = productView
          
   return (
@@ -18,7 +18,7 @@ function Shop() {
        {productView.map((item)=> {
             return (
               <div key={item.id} className='shop-items'>
-              <Link to={`/product/${item.name}`} >
+              <Link to={`/product/${item.itemInfo.name}`} >
                 <figure className='store-img'>
                     <img src={`../photos/${item.img}`} alt='image'/>
                 </figure>
