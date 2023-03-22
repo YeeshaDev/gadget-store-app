@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './HotDeal.css'
 
 function HotDeal() {
@@ -69,7 +70,9 @@ function HotDeal() {
 							</ul>
 							<h2 className="text-uppercase">hot deal this week</h2>
 							<p>New Collection Up to 50% OFF</p>
-							<a className="hotdeal-btn" href="#">Shop now</a>
+							<Link to='/shop'>
+							<button className="hotdeal-btn" href="#">Shop now</button>
+							</Link>
 						</div>
 					</div>
 				</div>

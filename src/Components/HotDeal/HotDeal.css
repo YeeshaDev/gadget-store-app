@@ -52,6 +52,7 @@ width: 115%;
     justify-content: center;
     border-radius: 1rem;
     transition: all 0.3s ease-in-out;
+    border: none;
 }
 .hotdeal-btn:hover {
     background-color: #D10024;

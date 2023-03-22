@@ -17,6 +17,7 @@ import ProtectedRoutes from './Utils/ProtectedRoutes';
 import { useEffect } from 'react';
 import data from './Components/data/product.json'
 import { product } from './data';
+import Products from './Components/AllProducts/Products';
 
 function App({item}) {
   //const [data,setData] = useState([]);
@@ -34,6 +35,8 @@ function App({item}) {
    </Route>
    <Route path='/search/:query' element={<><Header/><SearchPage/></>}>
    </Route>
+   <Route path='/shop' element={<Products/>}>
+   </Route> 
    <Route path='/favourites' element={<><Header/><FavItem/> </>}>
    </Route>
    <Route path='/cart' element={<CartItem/>}>
