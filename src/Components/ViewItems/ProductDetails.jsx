@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import items from '../../data';
+import { product } from '../../data';
 import { cartActions } from '../../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 import { RiStarFill } from 'react-icons/ri';
@@ -22,17 +23,16 @@ const ref = useRef()
   const [tab, setTab] = useState('desc');
   const [rating, setRating] = useState(null)
   const productView =
-    items.find((product) => product.name == productName);
-  const { id, name, category, price,
-    img, shortDesc, description, reviews } = productView
+    product.find((product) => product.id == productName);
+  const { id, itemInfo } = productView
 
   const addToCart = () => {
     dispatch(cartActions.addItem({
       id: id,
-      name: name,
-      price: price,
-      img: img,
-      description: description,
+      name: itemInfo.name,
+      price: itemInfo.newItemPrice,
+      img: itemInfo.itemImg[0],
+      description: itemInfo.description,
     })
 
     )
@@ -41,7 +41,7 @@ const ref = useRef()
 
   }
 
-  const relatedProducts = items.filter((item) => item.category == category);
+  const relatedProducts = product.filter((item) => item.itemInfo.category == itemInfo.category);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,35 +67,37 @@ const ref = useRef()
     <div ref={ref}>
       
       <div className='product-body pb-2 d-flex align-items-center justify-content-center'>
-        <div className="shop-img">
-          <img src={`../photos/${img}`} alt="" />
-        </div>
+        <figure className='productDetailsImg'>
+          <img src={`../${itemInfo.itemImg[0]}`} 
+          className='product-details__img'
+          alt="" />
+        </figure>
         <div className='product-details'>
         
-          <p className='text-uppercase my-2'>{category}</p>
-          <h2>{name}</h2>
-          <h3>{price}</h3>
-          <p>{shortDesc}</p>
+          <p className='text-uppercase my-2'>{itemInfo.category}</p>
+          <h2>{itemInfo.name}</h2>
+          <h3>${itemInfo.newItemPrice}</h3>
+          <p>{itemInfo.shortDesc}</p>
           <button className='product-btn' onClick={addToCart}>Add to cart</button>
         </div>
       </div>
-      <div className=''>
+      <div>
         <div className=' desc-details px-5 '>
-          <div className='d-flex gap-5 mt-3'>
+          <div className='d-flex gap-5 '>
             <h3 className={`${tab == 'desc' ? 'active-tab' : ''}`}
               onClick={() => setTab('desc')}>Description</h3>
             <h3 className={`${tab == 'rev' ? 'active-tab' : ''}`}
-              onClick={() => setTab('rev')}>Review({reviews.length})</h3>
+              onClick={() => setTab('rev')}>Review({itemInfo.reviews.length})</h3>
           </div>
           {tab == 'desc' ? (
             <div className="tab-content">
-              <p className='desc'>{description}</p>
+              <p className='desc'>{itemInfo.description}</p>
             </div>
           ) : (
             <div className='product-review mt-4 '>
               <div className="review-wrapper">
                 <ul>
-                  {reviews.map((items, index) => (
+                  {itemInfo.reviews.map((items, index) => (
                     <li key={index} className='mb-3'>
                       <p>Jane Doe</p>
                       <span>{items.rating} (ratings)</span>

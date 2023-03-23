@@ -55,21 +55,28 @@ function RelatedProduct({ item, category }) {
   
 
   return (
-    <div>
-    <Link to={`/product/${item.name}`}>
-      <div  className='related-items text-center'>
-      <div className="store-img">
-          <img src={`../photos/${item.img}`} alt="" />
+    <>
+      <Link to={`/product/${item.id}`}>
+    <img src={`../${item.itemInfo.itemImg[0]}`}
+    className='details__img'
+    alt='laptops' />
+    <div className='product__text'>
+        <h3>{item.itemInfo.name}</h3>
+        <h5>{item.itemInfo.description1}</h5>
+        <span className='d-flex align-items-center justify-content-between gap-5'>
+        <h4>${item.itemInfo.newItemPrice}</h4>
+        <strike>{item.itemInfo.oldItemPrice}</strike>
+        </span>
+        <button onClick={addToCart} className='product-btn d-block mx-auto mt-3'>add to cart</button>
         </div>
-        <p>{category}</p>
-        <h3>{item.name}</h3>
-        <h3>{item.price}</h3>
-        <button onClick={addToCart} className='product-btn d-block m-auto'>add to cart</button>
-        
-      </div>
-      </Link>
-      
-    </div>
+        </Link>
+   </>
+
+
+
+
+
+   
   )
 }
 

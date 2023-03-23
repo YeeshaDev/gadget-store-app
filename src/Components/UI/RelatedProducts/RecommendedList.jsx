@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 //import ProductCard from '../ProductCard';
 import "slick-carousel/slick/slick-theme.css";
+import { product } from '../../../data';
 import RelatedProduct from './RelatedProduct';
 import './style.css'
 
@@ -14,12 +15,12 @@ import './style.css'
 function RecommendedList({ item }) {
     //const relatedProducts = items.filter((item) => item.category === category);
     return (
-        <div className='related-content'>
+        <div className='related__wrapper'>
             {/*<Slider ref={setSliderRef} {...settings} >*/}
             {item.map((item, index) => {
 
                 return (
-                    <div key={index} >
+                    <div key={item.id}  className='related__container'>
 
                         <RelatedProduct item={item} />
 

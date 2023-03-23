@@ -39,10 +39,10 @@ console.log(unique)
 <div className='row'>
 
     {unique.map((items,index) => {
-        const {itemInfo} = items;
+        const {id,itemInfo} = items;
         return (
             
-             <div className="flex"  key={index}>
+             <div className="flex"  key={id}>
 				<Link to={`/shop/${itemInfo.category}`}>
 						<div className="shop">
 							<div className="shop-img">

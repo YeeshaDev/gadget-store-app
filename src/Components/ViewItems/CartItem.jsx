@@ -52,7 +52,7 @@ dispatch(cartActions.clearCart())
           return (
             <tr key={index} >
               <td>
-              <img src={`../photos/${item.img}`}
+              <img src={`../${item.img}`}
                alt="" className='cart-img'/>
               </td>
               <td>{item.name}</td>

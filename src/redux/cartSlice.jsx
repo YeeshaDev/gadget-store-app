@@ -121,7 +121,11 @@ const cartSlice = createSlice({
   //clear all items
   clearCart:(state,action) => {
     state.cartItem = [];
-  
+
+  setCartListFunc(
+        state.cartItem =[],
+        state.totalQuantity=0
+  )
   }
   }
 });
