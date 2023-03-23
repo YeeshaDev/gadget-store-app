@@ -75,68 +75,14 @@ const dispatch = useDispatch();
     <li>Laptops</li>
     <li>SmartPhones</li>
     <li>Cameras</li>
-    <li>Phones</li>
+    <li>TVs</li>
     <li>watch</li>
   </ul>
-    </div> 
-     {/*<div className='gadgets'>
-    
-   <Slider ref={setSliderRef} {...settings} >
-    {items.map((products)=>{
-      console.log(products.id)
-    return (
-        <div className="gadget-content" key={item.id}>
-          <div className='gadget-body'>
-          <span className='heart-icon'><IoHeartOutline/></span>
-        <div className="gadget-img">
-								
-							</div>
-
-              <div className="gadget-name">
-                <p>{item.collection}</p>
-                <h3>{item.name}</h3>
-                <h2>{item.price}</h2>
-              <hr/>
-              <div className='bottom-icons gap-4'>
-                <button className='b-icons'>
-                  <IoHeartOutline/>
-                  <span className='tooltipp'>ADD TO WISHLIST</span>
-                  </button>
-                  <button className='b-icons'>
-                <FaExchangeAlt/>
-                <span className='tooltipp'>ADD TO COMPARE</span>
-                </button>
-              
-              <button className='b-icons'>
-                <FaEye/>
-                <span className='tooltipp'>QUICK VIEW</span>
-                </button>
-              
-              </div>
-              </div>
-              </div>
-              <div className="add-cart" onClick={addToCart}>
-    <button className='add-to-cart-btn' >
-    <span><FaShoppingCart/></span>
-    Add to cart
-    </button>
-        </div>
-              </div>
-              
-    } )
-    })}
-  </Slider>*/}
+    </div>
     
     <ProductList  />
 
-  {/* {product.map((item) => {
-    return (
-      <div key={item.id}>
-        <img src={item.itemInfo.itemImg[0]} alt=''/>
-
-      </div>
-    )
-   })}*/} 
+  
 </div>
 
   )

@@ -56,7 +56,7 @@ dispatch(cartActions.clearCart())
                alt="" className='cart-img'/>
               </td>
               <td>{item.name}</td>
-              <td>{item.price}</td>
+              <td>${item.price}</td>
               <td>{item.quantity}</td>
               <td ><span onClick={() => dispatch(cartActions.removeFromCart(item.id))}><FaTrash /></span></td>
               

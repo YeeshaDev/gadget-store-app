@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import ProductCard from './ProductCard';
 import "slick-carousel/slick/slick-theme.css";
+import { recentlyAdded } from '../../data';
 //import RelatedProduct from './RelatedProducts/RelatedProduct';
 
 
@@ -51,10 +52,10 @@ function ProductList({ category }) {
   return (
     <div id='#new'>
       <Slider ref={setSliderRef} {...settings} >
-        {items.map((item, index) => {
-
+        {recentlyAdded.map((item, index) => {
+   
           return (
-            <div key={index}>
+            <div key={item.id}>
 
               <ProductCard item={item} />
 

@@ -20,7 +20,7 @@ const Products = () => {
             <div className='grid__wrapper'>
                 {laptops.slice(0,12).map((item) => {
             return(
-                       <div className='shop__container'>
+                       <div className='shop__container' key={item.id}>
                         <img src={item.itemInfo.itemImg[0]} 
                         className='laptop__img'
                         alt='laptops' />
@@ -44,7 +44,7 @@ const Products = () => {
             <div className='grid__wrapper'>
                 {phones.slice(0,12).map((item) => {
             return(
-                       <div className='shop__container'>
+                       <div className='shop__container' key={item.id}>
                         <img src={item.itemInfo.itemImg[0]} 
                         className='laptop__img'
                         alt='laptops' />
@@ -68,7 +68,7 @@ const Products = () => {
             <div className='grid__wrapper'>
                 {games.slice(0,12).map((item) => {
             return(
-                       <div className='shop__container'>
+                       <div className='shop__container' key={item.id}>
                         <img src={item.itemInfo.itemImg[0]} 
                         className='laptop__img'
                         alt='laptops' />
@@ -91,7 +91,7 @@ const Products = () => {
             <div className='grid__wrapper'>
                 {televisions.slice(0,12).map((item) => {
             return(
-                       <div className='shop__container'>
+                       <div className='shop__container' key={item.id}>
                         <img src={item.itemInfo.itemImg[0]} 
                         className='laptop__img'
                         alt='laptops' />

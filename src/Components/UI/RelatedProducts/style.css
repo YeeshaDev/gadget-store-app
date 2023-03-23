@@ -29,4 +29,7 @@
     padding-left: 1rem;
 }
 
+.details__img:hover {
+    transform: scale(1.05);
+}
 

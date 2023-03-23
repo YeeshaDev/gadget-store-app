@@ -12,10 +12,11 @@ function ProductCard({item}) {
     const addToCart = () => {
         dispatch(cartActions.addItem({
           id:item.id,
-          name: item.name,
-          price: item.price,
-          img: item.img,
-          description:item.description
+          name: item.itemInfo.name,
+          price: item.itemInfo.newItemPrice,
+          oldPrice: item.itemInfo.oldItemPrice,
+          img: item.itemInfo.itemImg[0],
+          description:item.itemInfo.description
         })
         
         )
@@ -27,10 +28,12 @@ function ProductCard({item}) {
       const addToFav = () => {
         dispatch(cartActions.addToWishList({
           id:item.id,
-          name: item.name,
-          price: item.price,
-          img: item.img,
-          category:item.category
+          name: item.itemInfo.name,
+          price: item.itemInfo.newItemPrice,
+          oldPrice: item.itemInfo.oldItemPrice,
+          img: item.itemInfo.itemImg[0],
+          description:item.itemInfo.description1,
+          category:item.itemInfo.category
         })
         
         )
@@ -41,17 +44,20 @@ function ProductCard({item}) {
   return (
     <div className='gadgets'>
       
-        <div className="gadget-content" key={item.id}>
+        <div className="gadget-content">
           <div className='gadget-body'>
           <span className='heart-icon'><IoHeartOutline/></span>
         <div className="gadget-img">
-	<img src={`./photos/${item.img}` || `../photos/${item.img}` } alt=""/>
+	<img src={`./${item.itemInfo.itemImg[0]}` || `../${item.itemInfo.itemImg}` } 
+  className='details__img'
+  alt=""/>
 							</div>
 
               <div className="gadget-name">
-                <p>{item.collection}</p>
-                <h3>{item.name}</h3>
-                <h2>{item.price}</h2>
+                <p>{item.itemInfo.category}</p>
+                <h3>{item.itemInfo.name}</h3>
+                <h2>${item.itemInfo.newItemPrice}</h2>
+                <strike>{item.itemInfo.oldItemPrice}</strike>
               <hr/>
               <div className='bottom-icons gap-4'>
                 <button className='b-icons' onClick={addToFav}>
@@ -64,7 +70,7 @@ function ProductCard({item}) {
                 </button>
               
               <button className='b-icons'>
-              <Link to={`/product/${item.name}`}>
+              <Link to={`/product/${item.id}`}>
                 <FaEye/>
                 <span className='tooltipp'>QUICK VIEW</span>
                 </Link>

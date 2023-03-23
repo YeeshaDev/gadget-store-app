@@ -32,14 +32,15 @@
     justify-content: center;
     transition: all 0.3s ease-in-out;
     border-radius: 0.3rem 0.3rem 0 0;
+    padding: 1rem 0;
 }
 
 
 .deal-img img{
     
-    width: 10rem;
-    height:10rem;
-    object-fit: cover;
+    width: 200px;
+    height:200px;
+    object-fit: contain;
 }
 .top-selling-body p{
 text-transform: uppercase;

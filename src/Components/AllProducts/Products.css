@@ -38,10 +38,11 @@
     justify-content: flex-start;
     flex-direction: column;
     text-align: left;
+    margin-top: 2.5rem;
 }
 .product__text h3 {
     font-size: 1.2rem;
-    margin-top: 2.5rem;
+    
 }
 .product__text h5 {
     font-size: 0.8rem;

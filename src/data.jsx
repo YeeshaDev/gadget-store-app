@@ -7096,6 +7096,121 @@ export const product = [
           ]
 
           export const recentlyAdded = [
+
+            {
+              id: 1,
+              "itemInfo": {
+                "name": "Macbook Pro",
+                "itemImg": [
+                  "/photos/product01.png",
+                  
+                ],
+                "description1": "Macbook pro-2015",
+                "description2": "",
+                "newItemPrice": "850",
+                "oldItemPrice": "$544",
+                "itemTotal": "850",
+                "brand": "Ps",
+                "category": "Computers",
+                "color": "🇺🇦",
+                "OS": "🫶🏼",
+                "CPU": "🁼",
+                "smop": "😘",
+                "ct": "🌕",
+                "aom": "🌑",
+              shortDesc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+          reviews: [
+            {
+              rating: 4.6,
+              text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            },
+            {
+              rating: 4.9,
+              text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            },
+          ],
+          avgRating: 4.7,
+        }
+          },
+          {
+              id: 2,
+              "itemInfo": {
+                "name": "Macbook Pro",
+                "itemImg": [
+                  "/photos/product02.png",
+                  
+                ],
+                "description1": "Headset",
+                "description2": "",
+                "newItemPrice": "850",
+                "oldItemPrice": "$544",
+                "itemTotal": "850",
+                "brand": "Ps",
+                "category": "Speaker",
+                "color": "🇺🇦",
+                "OS": "🫶🏼",
+                "CPU": "🁼",
+                "smop": "😘",
+                "ct": "🌕",
+                "aom": "🌑",
+              shortDesc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+          reviews: [
+            {
+              rating: 4.6,
+              text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            },
+            {
+              rating: 4.9,
+              text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            },
+          ],
+          avgRating: 4.7,
+        }
+          },
+          {
+              id: 3543,
+              "itemInfo": {
+                "name": "Macbook Pro",
+                "itemImg": [
+                  "/photos/product03.png",
+                  
+                ],
+                "description1": "PS 4",
+                "description2": "",
+                "newItemPrice": "850",
+                "oldItemPrice": "$544",
+                "itemTotal": "850",
+                "brand": "Ps",
+                "category": "Computers",
+                "color": "🇺🇦",
+                "OS": "🫶🏼",
+                "CPU": "🁼",
+                "smop": "😘",
+                "ct": "🌕",
+                "aom": "🌑",
+              shortDesc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+          reviews: [
+            {
+              rating: 4.6,
+              text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            },
+            {
+              rating: 4.9,
+              text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            },
+          ],
+          avgRating: 4.7,
+        }
+          },
             {
               "id": "8320",
               "itemInfo": {

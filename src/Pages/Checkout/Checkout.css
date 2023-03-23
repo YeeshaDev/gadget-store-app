@@ -51,6 +51,10 @@ flex-direction: column;
    border-radius: 10px;
 }
 
+.error {
+    border: 1px solid red;
+}
+
 .checkout__cart button {
     display: block;
     margin: auto;

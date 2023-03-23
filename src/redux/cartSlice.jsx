@@ -47,6 +47,7 @@ const cartSlice = createSlice({
                 name:newItem.name,
                 img:newItem.img,
                 price:newItem.price,
+                oldPrice:newItem.oldPrice,
                 description: newItem.description,
                 quantity:1,
                 totalPrice:newItem.price,
@@ -71,7 +72,7 @@ const cartSlice = createSlice({
         state.totalQuantity
     );
       
-            console.log(newItem)
+   console.log(newItem)
     },
     //add item to wishlist
     addToWishList:(state,action) => {
@@ -85,6 +86,8 @@ const cartSlice = createSlice({
               name:wishList.name,
               img:wishList.img,
               price:wishList.price,
+              oldPrice:wishList.oldPrice,
+              description: wishList.description,
               category:wishList.category,
               quantity:1,
               totalPrice:wishList.price
@@ -116,8 +119,14 @@ const cartSlice = createSlice({
       return item.id !== action.payload;
     });
     state.cartItem = DeleteItems;*/
+    setCartListFunc(
+      state.cartItem.map((item) => item),
+      state.totalAmount,
+      state.totalQuantity
+  );
+    
   },
-  
+ 
   //clear all items
   clearCart:(state,action) => {
     state.cartItem = [];

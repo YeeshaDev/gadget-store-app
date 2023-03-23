@@ -1,11 +1,12 @@
 import React,{useState} from 'react';
 import { useParams,Link } from 'react-router-dom';
 import items from '../../data';
+import { product } from '../../data';
 import './Search.css'
 
 function Search() {
     const {query} = useParams()
-    const [products,setProducts] = useState(items)
+    const [products,setProducts] = useState(product)
     
    /* return (
         <>
@@ -36,20 +37,27 @@ setProducts(Array(query))
     <div>
       <h1 className='p-2'>Results for {query}</h1>
     
-    <div className='search-content'>
+    <div className='grid__wrapper'>
       
-        {products.filter((item =>item.name.toLowerCase().includes(query.toLowerCase()) || item.category.toLowerCase().includes(query.toLowerCase()))).map((item) => {
-        
+        {products.filter((item =>item.itemInfo.name.toLowerCase().includes(query.toLowerCase()) || item.itemInfo.category.toLowerCase().includes(query.toLowerCase()))).map((item) => {
+        const {itemInfo,id} =  item
       return (
-        <div key={item.id} className='search-items'>
-          <Link to={`/product/${item.name}`} >
-            <figure className='store-img'>
-                <img src={`../photos/${item.img}`} alt='image'/>
+        <div key={id} className='related__container'>
+          <Link to={`/product/${id}`} >
+            <figure>
+                <img src={`../${itemInfo.itemImg[0]}`} 
+                className='details__img'
+                alt='image'/>
             </figure>
-            <p className='text-uppercase'>{item.collection}</p>
-            <h1>{item.name}</h1>
-    
-            <h1>{item.price}</h1>
+            <div className='product__text'>
+        <p className='text-uppercase mt-2'>{itemInfo.category}</p>
+        <h3>{itemInfo.name}</h3>
+        <h5>{itemInfo.description1}</h5>
+        <span className='d-flex align-items-center justify-content-between gap-5'>
+          <h4>${item.itemInfo.newItemPrice}</h4>
+          <strike>{item.itemInfo.oldItemPrice}</strike>
+          </span>
+      </div>
             </Link>
         </div>
       )

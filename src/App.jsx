@@ -18,11 +18,15 @@ import { useEffect } from 'react';
 import data from './Components/data/product.json'
 import { product } from './data';
 import Products from './Components/AllProducts/Products';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App({item}) {
   //const [data,setData] = useState([]);
   
-
+useEffect(() => {
+  AOS.init();
+},[])
   return (
     <Routes>
  <Route path='/login' element={<Login/>}>

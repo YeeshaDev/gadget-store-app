@@ -5,6 +5,7 @@ import {FaChevronLeft,FaChevronRight} from 'react-icons/fa'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Deal.css'
+import { weeklyFeatures } from '../../data';
 import { Link } from 'react-router-dom';
 
 function Deal() {
@@ -47,20 +48,20 @@ function Deal() {
      <div className='top-selling-content '>
      
      <Slider ref={setSliderRef} {...settings}>
- {items.map((item) => {
-  const {id,name,collection,img,price,
-    category,discount,badge} = item;
+ {weeklyFeatures.map((item) => {
+  const {id,itemInfo} = item;
   return (
     
     <div key={id} className='top-selling d-block align-items-center mt-3'>
-      <Link to={`/product/${item.name}`}>
+      <Link to={`/product/${id}`}>
      <figure className='deal-img'>
-      <img src={`./photos/${img}`} alt=''/>
+      <img src={`./${itemInfo.itemImg[0]}`} 
+      alt=''/>
      </figure>
      <div className='top-selling-body'>
-      <p>{collection}</p>
-      <h3>{name}</h3>
-      <h2 style={{fontSize:'1.2rem'}}>{price}</h2>
+      <p>{itemInfo.category}</p>
+      <h3>{itemInfo.name}</h3>
+      <h2 style={{fontSize:'1.2rem'}}>${itemInfo.newItemPrice}</h2>
      </div>
      </Link>
     </div>

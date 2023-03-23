@@ -1,20 +1,19 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import items from '../../data';
 import { product } from '../../data';
 import { cartActions } from '../../redux/cartSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RiStarFill } from 'react-icons/ri';
-import ProductList from '../UI/ProductList';
+import { useNavigate } from 'react-router-dom';
 import './style.css'
 import { useState, useRef, useEffect } from 'react';
-import RelatedProduct from '../UI/RelatedProducts/RelatedProduct';
 import RecommendedList from '../UI/RelatedProducts/RecommendedList';
 
 function ProductDetails() {
   const { productName } = useParams();
-
+  const navigate = useNavigate();
+  
 const ref = useRef()
   const dispatch = useDispatch();
   const reviewUser = useRef('');
@@ -76,9 +75,15 @@ const ref = useRef()
         
           <p className='text-uppercase my-2'>{itemInfo.category}</p>
           <h2>{itemInfo.name}</h2>
-          <h3>${itemInfo.newItemPrice}</h3>
-          <p>{itemInfo.shortDesc}</p>
+          <h2>${itemInfo.newItemPrice}</h2>
+          <p >{itemInfo.shortDesc}</p>
+          <div className='details__btns'>
           <button className='product-btn' onClick={addToCart}>Add to cart</button>
+          <Link to='/checkout'>
+          <button type='button' 
+          className="buy-btn"> Buy Now</button>
+          </Link>
+          </div>
         </div>
       </div>
       <div>
@@ -131,9 +136,7 @@ const ref = useRef()
                     <button type='button' className="product-btn" onClick={handleSubmit}>
                       Submit
                     </button>
-                    <button type='button' className="product-btn">
-                      Buy Now
-                    </button>
+                    
                   </form>
                 </div>
               </div>
