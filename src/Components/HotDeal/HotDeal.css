@@ -69,7 +69,7 @@ width: 115%;
 }
 @media screen and (max-width:600px) {
     .hot-deal-img img{
-        width: 105%;
+        width: 100%;
         }
         .hot-deal-countdown li h3{
             width: 50px;
