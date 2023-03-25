@@ -7,7 +7,9 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
 import './style.css'
 
+
 function cartItem() {
+ 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItem = useSelector((state) => state.cart.cartItem)
@@ -30,8 +32,15 @@ dispatch(cartActions.clearCart())
   
   return (
     <div className='cart'>
-      <div className="image-container">
-        <img src='./photos/smart-watch.png' alt=''/>
+      <div className="video-container">
+        <video className='cart__video' 
+        autoPlay={true} loop muted controls=''
+        preload='auto'
+        >
+          <source src='./assets/video/smartphone.mp4' type='video/mp4' />
+          </video>
+          <div className='overlay'></div>
+          <h3>Your Cart Items</h3>
       </div>
       
       {cartItem.length === 0 ? (<h1 className='text-center mt-5'>NO PRODUCT FOUND</h1>) : (
@@ -50,10 +59,13 @@ dispatch(cartActions.clearCart())
           <tbody >
    {cartItem.map((item,index) => {
           return (
-            <tr key={index} >
+            <tr key={index} className='tr'>
+              
               <td>
+              <Link to={`/product/${item.id}`}>
               <img src={`../${item.img}`}
                alt="" className='cart-img'/>
+               </Link>
               </td>
               <td>{item.name}</td>
               <td>${item.price}</td>

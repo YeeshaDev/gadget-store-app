@@ -20,15 +20,22 @@ import { product } from './data';
 import Products from './Components/AllProducts/Products';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useRef } from 'react';
 
 function App({item}) {
+  const ref = useRef()
   //const [data,setData] = useState([]);
   
+
 useEffect(() => {
   AOS.init();
 },[])
   return (
+    <div >
+      <Header/>
+    
     <Routes>
+      
  <Route path='/login' element={<Login/>}>
    </Route> 
    <Route path='/signup' element={<Signup/>}>
@@ -37,23 +44,25 @@ useEffect(() => {
   <Home/></ProtectedRoutes>
   }>
    </Route>
-   <Route path='/search/:query' element={<><Header/><SearchPage/></>}>
+   <Route path='/search/:query' element={<SearchPage/>}>
    </Route>
    <Route path='/shop' element={<Products/>}>
    </Route> 
-   <Route path='/favourites' element={<><Header/><FavItem/> </>}>
+   <Route path='/favourites' element={<FavItem/>}>
    </Route>
    <Route path='/cart' element={<CartItem/>}>
    </Route> 
    <Route path='/checkout' element={<Checkout/>}>
    </Route> 
-   <Route path='/product/:productName' element={<><Header/> <ProductDetails item={item}/> <Footer/> </>}>
+   <Route path='/product/:productName' element={ <ProductDetails item={item}/>}>
    </Route> 
-   <Route path='/shop/:category' element={<><Header/><Shop/></>}>
+   <Route path='/shop/:category' element={<Shop/>}>
    </Route>
    
   
     </Routes>
+    <Footer/>
+    </div>
     
   )
 }

@@ -9,12 +9,22 @@ function FavItem() {
         {!favItem.length ==0 &&(<h1 className='mb-4 px-3'>You have {(favItem.length)} item(s) in your wishList</h1>)}
       {favItem.length == 0 ? ( <div>
       <h1 className='text-center'>Start shoping to create a wishlist</h1>
-      <Link>
+      <Link to='/shop'>
       <button className="product-btn d-block m-auto my-3">Shop here</button>
       </Link>
       </div>
       ) : (
       <div className="fav-content">
+        <div className="video-container">
+        <video className='cart__video' 
+        autoPlay={true} loop muted controls=''
+        preload='auto'
+        >
+          <source src='./assets/video/smartphone.mp4' type='video/mp4' />
+          </video>
+          <div className='overlay'></div>
+          <h3>Your Cart Items</h3>
+      </div>
         {favItem.map((item,index) => {
           console.log(item.category)
           return (

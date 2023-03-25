@@ -33,8 +33,8 @@ function Login() {
         },
     ]
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('test01@gmail.com');
+    const [password, setPassword] = useState('Agunbiade01');
     //const [user, loading, error] = useAuthState(auth);
 
     
@@ -84,7 +84,7 @@ function Login() {
         <figure className='animated'>
         <img src={item.img}/>
     </figure>
-    <h3>{item.text}</h3>
+    <h3 className='text-center'>{item.text}</h3>
     <p>{item.sub}</p>
     </div> 
     

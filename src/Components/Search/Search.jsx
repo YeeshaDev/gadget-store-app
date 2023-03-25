@@ -8,6 +8,7 @@ function Search() {
     const {query} = useParams()
     const [products,setProducts] = useState(product)
     
+    const searchItems =products.filter((item =>item.itemInfo.name.toLowerCase().includes(query.toLowerCase()) || item.itemInfo.category.toLowerCase().includes(query.toLowerCase())))
    /* return (
         <>
         <h1>search</h1>
@@ -35,11 +36,22 @@ setProducts(Array(query))
     
   return (
     <div>
-      <h1 className='p-2'>Results for {query}</h1>
+      {searchItems.length === 0 ? (
+        <>
+        <h1 className='text-center mt-4'>Item Not Available</h1>
+        <p className='text-center'>Go to shop to see all available items</p>
+        <Link to='/shop'>
+        <button className="product-btn d-block m-auto my-3"> Shop</button>
+        </Link>
+        </>
+      ) : (
+<h1 className='p-2'>Results for {query}</h1>
+      )}
+      
     
     <div className='grid__wrapper'>
       
-        {products.filter((item =>item.itemInfo.name.toLowerCase().includes(query.toLowerCase()) || item.itemInfo.category.toLowerCase().includes(query.toLowerCase()))).map((item) => {
+        {searchItems.map((item) => {
         const {itemInfo,id} =  item
       return (
         <div key={id} className='related__container'>

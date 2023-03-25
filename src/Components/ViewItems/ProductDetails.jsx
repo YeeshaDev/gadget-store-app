@@ -119,7 +119,7 @@ const ref = useRef()
                         required
                       />
                     </div>
-                    <div className="form-group d-flex gap-5 align-items-center ml-2">
+                    <div className="form-group d-flex gap-3 gap-lg-5 align-items-center ml-2">
                       <span title='rate' onClick={() => setRating(1)}>1<RiStarFill /></span>
                       <span title='rate' onClick={() => setRating(2)}>2<RiStarFill /></span>
                       <span title='rate' onClick={() => setRating(3)}>3<RiStarFill /></span>

@@ -12,15 +12,13 @@ import { toast } from 'react-toastify';
 import { Link,useNavigate } from 'react-router-dom';
 import useAuth from '../../Utils/useAuth';
 
-function Header({item}) {
+function Header() {
 const navigate = useNavigate();
 const {totalQuantity,wishListQuantity} = useSelector((state) => state.cart)
 const {current} = useAuth();
 
 const[menu,setMenu] = useState(false);
-    
 
- const [products,setProducts]= useState(item);
  const [search,setSearch] = useState('');
  const [toggleProfile,setToggleProfile] = useState(false)
   //const [tab,setTab] = useState('')
@@ -78,9 +76,11 @@ const SignOut = () => {
         <header className='top-header'>
 			{/* the logo */}
 			<Link to='/'>
-         <div className='logo col-md-3'>
-			<h1 className=' relative text-center text-white'>GADGETS</h1>
-			<div className='circle'></div>
+         <div className='logo'>
+			<h1 className=' text-center text-white'>GADGETS</h1>
+			<div className='circle'>
+
+			</div>
 			
 		 </div>
 		 </Link>
@@ -119,7 +119,7 @@ const SignOut = () => {
 			</div>
 			<div className='d-block position-relative'>
 			<div className='d-flex gap-1 avatar__container'>
-			<img src={current ? current.photoURL : './photos/avatar1.png'} alt='avatar'/>
+			<img src={current ? current.photoURL : '../photos/avatar1.png'} alt='avatar'/>
 			<span className='text-white ' onClick={() => setToggleProfile(!toggleProfile)}>
 			{toggleProfile ? <FaCaretUp/> : <FaCaretDown/>}</span>
 			</div> 

@@ -14,7 +14,7 @@ import ProductCard from '../Components/UI/ProductCard';
 function Home({handleSearch,query,item,sliderRef}) {
   return (
     <div>
-        <Header query={query} handleSearch={handleSearch} item={item}/>
+        
         <Collection/>
         <Marquee 
         pauseOnHover={true}
