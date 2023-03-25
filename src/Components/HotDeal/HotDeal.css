@@ -67,3 +67,16 @@ width: 115%;
         object-fit: cover;
         }
 }
+@media screen and (max-width:600px) {
+    .hot-deal-img img{
+        width: 105%;
+        }
+        .hot-deal-countdown li h3{
+            width: 50px;
+            height: 50px;
+            
+         
+         }
+        
+        
+}

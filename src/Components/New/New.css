@@ -70,7 +70,7 @@
 .gadget-content {
 
     position: relative;
-  margin:5px 0 15px 0px;
+  margin:5px auto 15px auto;
   /*-webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   -webkit-transition: 0.2s all;*/
@@ -79,6 +79,8 @@
   height: 100%;
   padding: 0.5rem 0;
 border-radius: 0.5rem;
+width: 90%;
+
   
 }
 
@@ -107,6 +109,11 @@ border-radius: 0.5rem;
     font-size: 1.2rem;
 }
 
+.product__text hr {
+  display: block;
+  border: 0.5px solid #232324;
+  width: 100%;
+}
 .gadget-body h2 {
     color: #D10024;
 }

@@ -46,20 +46,23 @@ function ProductCard({item}) {
       
         <div className="gadget-content">
           <div className='gadget-body'>
-          <span className='heart-icon'><IoHeartOutline/></span>
+          
         <div className="gadget-img">
 	<img src={`./${item.itemInfo.itemImg[0]}` || `../${item.itemInfo.itemImg}` } 
   className='details__img'
   alt=""/>
 							</div>
 
-              <div className="gadget-name">
+              <div className="product__text gadget-name">
                 <p>{item.itemInfo.category}</p>
                 <h3>{item.itemInfo.name}</h3>
+                <span className='d-flex align-items-center justify-content-between gap-5'>
                 <h2>${item.itemInfo.newItemPrice}</h2>
                 <strike>{item.itemInfo.oldItemPrice}</strike>
-              <hr/>
+                </span>
+                <hr/>
               <div className='bottom-icons gap-4'>
+              
                 <button className='b-icons' onClick={addToFav}>
                   <IoHeartOutline/>
                   <span className='tooltipp'>ADD TO WISHLIST</span>

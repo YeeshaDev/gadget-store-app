@@ -33,12 +33,12 @@ function Deal() {
            slidesToShow: 2,
           }
           },
-          /*{
+          {
             breakpoint: 500,
             settings: {
              slidesToShow: 1,
             }
-         }*/
+         }
         
       ]
   }
@@ -52,23 +52,27 @@ function Deal() {
   const {id,itemInfo} = item;
   return (
     
-    <div key={id} className='top-selling d-block align-items-center mt-3'>
+    <div key={id} className='related__container'>
       <Link to={`/product/${id}`}>
-     <figure className='deal-img'>
+     <figure>
       <img src={`./${itemInfo.itemImg[0]}`} 
+      className='details__img m-auto'
       alt=''/>
      </figure>
-     <div className='top-selling-body'>
-      <p>{itemInfo.category}</p>
-      <h3>{itemInfo.name}</h3>
-      <h2 style={{fontSize:'1.2rem'}}>${itemInfo.newItemPrice}</h2>
+     <div className='product__text'>
+     <p className='text-uppercase mt-2'>{itemInfo.category}</p>
+        <h3>{itemInfo.name}</h3>
+        <span className='d-flex align-items-center justify-content-between gap-5'>
+        <h4>${itemInfo.newItemPrice}</h4>
+        <strike>{itemInfo.oldItemPrice}</strike>
+        </span>
      </div>
      </Link>
     </div>
   )
  })}
  </Slider>
- <div className='controls'>
+ <div className='controls mt-2'>
         <button onClick={sliderRef?.slickPrev}>
           <FaChevronLeft />
         </button>

@@ -88,11 +88,11 @@ const SignOut = () => {
 		 <div className="col-md-6">
 		<div className="header-search">
 		<form>
-		<select className="input-select">
+		{/*<select className="input-select">
 		<option value="0">All Categories</option>
 		<option value="1">Category 01</option>
 		<option value="1">Category 02</option>
-		</select>
+  </select>*/}
 		
 		<input className="input" 
 		type='search'
