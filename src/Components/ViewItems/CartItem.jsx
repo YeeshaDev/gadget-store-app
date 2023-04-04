@@ -39,7 +39,7 @@ dispatch(cartActions.clearCart())
         >
           <source src='./assets/video/smartphone.mp4' type='video/mp4' />
           </video>
-          <div className='overlay'></div>
+          <div className='video-overlay'></div>
           <h3>Your Cart Items</h3>
       </div>
       

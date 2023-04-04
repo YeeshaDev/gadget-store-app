@@ -152,11 +152,11 @@ if (user) navigate('/home',{replace:true});
         />
         </div>
         
-        <button > Create Account</button>
+        <button style={{marginTop:'2rem'}} > Create Account</button>
         
     </form>
-    <h5>Already have an account?
-        <span onClick={() => navigate('/login')}>Sign up for free</span>
+    <h5 className='last--text'>Already have an account?
+        <span onClick={() => navigate('/login')}>Sign In</span>
     </h5>
 </div>
 

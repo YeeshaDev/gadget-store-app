@@ -11,7 +11,7 @@ import Footer from '../Components/Footer/Footer';
 import ProductList from '../Components/UI/ProductList';
 import ProductCard from '../Components/UI/ProductCard';
 
-function Home({handleSearch,query,item,sliderRef}) {
+function Home({sliderRef}) {
   return (
     <div>
         

@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider } from 'firebase/auth';
 //import { signInWithGoogle } from '../../firebase';
 //import {useAuthState} from 'react-firebase-hooks/auth'
-import { auth,signIn, } from '../../Utils/firebase';
+import { auth,provider } from '../../Utils/firebase';
 import './Login.css';
 
 function Login() {
@@ -55,6 +55,37 @@ function Login() {
         });
        
       }
+
+      const signIn = () => {
+        //auth.signInWithPopup(provider).catch((error) => alert(error.message));
+      signInWithPopup(auth,provider)
+      .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = provider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      //
+      //navigate('/')
+      console.log(user)
+      
+    console.log(token)
+      
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+      }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = provider.credentialFromError(error);
+      // ...
+      
+      });
+      };
+      
       /*useEffect(() => {
         if (loading) {
           // maybe trigger a loading screen
@@ -124,7 +155,7 @@ function Login() {
             Sign In with Google</button>
     </form>
     
-    <h5>Don't have an account?
+    <h5 className='last--text'>Don't have an account?
         <span onClick={() => navigate('/signup')}>Sign up for free</span>
     </h5>
 </div>

@@ -20,10 +20,12 @@ import { product } from './data';
 import Products from './Components/AllProducts/Products';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useParams,useLocation } from 'react-router-dom';
 import { useRef } from 'react';
 
 function App({item}) {
   const ref = useRef()
+ let location = useLocation()
   //const [data,setData] = useState([]);
   
 
@@ -32,18 +34,17 @@ useEffect(() => {
 },[])
   return (
     <div >
-      <Header/>
-    
-    <Routes>
+      {location.pathname !== '/login' && location.pathname !== '/signup' && <Header/> }
       
- <Route path='/login' element={<Login/>}>
-   </Route> 
-   <Route path='/signup' element={<Signup/>}>
-   </Route> 
-  <Route path='/' element={<ProtectedRoutes>
+    <Routes>
+  <Route exact path='/' element={<ProtectedRoutes>
   <Home/></ProtectedRoutes>
   }>
    </Route>
+   <Route  path='/login' element={<Login/>}>
+   </Route> 
+   <Route path='/signup' element={<Signup/>}>
+   </Route> 
    <Route path='/search/:query' element={<SearchPage/>}>
    </Route>
    <Route path='/shop' element={<Products/>}>
@@ -61,7 +62,7 @@ useEffect(() => {
    
   
     </Routes>
-    <Footer/>
+    {location.pathname !== '/login' && location.pathname !== '/signup' && <Footer/> }
     </div>
     
   )

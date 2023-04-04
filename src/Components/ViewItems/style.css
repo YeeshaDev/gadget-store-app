@@ -203,7 +203,7 @@ color: rgb(229, 103, 13);
     position: relative;
 }
 
-.overlay {
+.video-overlay {
     position: absolute;
     content: '';
     background-color: rgba(0,0,0,0.3);
